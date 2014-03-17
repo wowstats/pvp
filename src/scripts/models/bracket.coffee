@@ -8,6 +8,7 @@ define (require) ->
     rival: 0.1
     duelist: 0.03
     gladiator: 0.005
+    rank1: 0.001
   }
 
   return class Bracket extends Backbone.AssociatedModel
@@ -39,6 +40,7 @@ define (require) ->
       @set('stats', stats)
 
       @set('titles', {
+        rank1: @calcTitle('rank1')
         gladiator: @calcTitle('gladiator')
         duelist: @calcTitle('duelist')
         rival: @calcTitle('rival')
